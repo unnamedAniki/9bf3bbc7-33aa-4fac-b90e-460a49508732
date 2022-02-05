@@ -82,7 +82,7 @@ def create_file():
             private = False
         created_by = current_user.username
         if not os.path.exists('files'):
-            os.path.mkdir('files')
+            os.mkdir(os.path.join('files'))
         filepath.save(os.path.join('files', filepath.filename))
         file = File(filename=filename, filepath=filepath.filename, created_by=created_by, private=private)
 
