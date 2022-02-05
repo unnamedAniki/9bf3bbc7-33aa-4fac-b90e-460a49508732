@@ -1,0 +1,11 @@
+{% extends "template.html" %}
+
+{% block body %}
+<h1>Hello, {{ username }}! </h1>
+{%if username == 'admin' %}
+<a href="/allfiles">Show all files (For admin)</a>
+{% endif %}
+<a href="/myfiles">My files</a>
+<a href="/create-file">Upload file</a>
+<a href="/index">Go to main page</a>
+{% endblock %}

@@ -1,0 +1,19 @@
+{% extends 'template.html' %}
+{% block title %}
+Login
+{% endblock %}
+{% block body %}
+{% with messages = get_flashed_messages() %}
+{% if messages %}
+    <h4>
+        {{ messages[0] }}
+    </h4>
+{% endif %}
+{% endwith %}
+<h1>Login</h1>
+<form method="POST" action="/login">
+  <input type="text" name="username" placeholder="Your username" autofocus="">
+  <input type="password" name="password" placeholder="Your Password">
+  <input type="submit"/>
+</form>
+{% endblock %}

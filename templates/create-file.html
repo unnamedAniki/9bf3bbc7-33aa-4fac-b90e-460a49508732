@@ -1,0 +1,17 @@
+{% extends 'template.html' %}
+{% block title %}
+Create File
+{% endblock %}
+{% block body %}
+<div>
+  <h1>Add new file</h1>
+  <form method="post" enctype="multipart/form-data">
+      <input type="file" name="filepath" id="filepath">
+      <input type="radio" name="private" id="public" value="False" checked>
+      public
+      <input type="radio" name="private" id="private" value="True">
+      private
+      <input type="submit" value="Done">
+  </form>
+</div>
+{% endblock %}

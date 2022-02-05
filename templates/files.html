@@ -1,0 +1,25 @@
+{% extends 'template.html' %}
+{% block title %}
+Files
+{% endblock %}
+{% block body %}
+<div>
+  <a href="/index">Return to index</a>
+  <h1>All files</h1>
+  {% if files|length > 0 %}
+  {% for all_files in files%}
+  {% if not all_files.private %}
+  <div>
+    <p>Filename: {{ all_files.filename }}</p>
+    <p>Upload date: {{ all_files.upload_date.date() }}</p>
+    <p>Created by: {{ all_files.created_by }}</p>
+    <p>Total downloads: {{ all_files.downloads }}</p>
+    <a href="/files/{{all_files.id}}">Download file</a>
+  </div>
+  {% endif %}
+  {% endfor %}
+  {% else %}
+    <p>None files</p>
+  {% endif %}
+</div>
+{% endblock %}
